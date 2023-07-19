@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:magdsoft_flutter_structure/data/data_providers/local/cache_helper.dart';
 import 'package:magdsoft_flutter_structure/data/data_providers/remote/dio_helper.dart';
 import 'package:magdsoft_flutter_structure/data/models/product_model.dart';
 import 'package:magdsoft_flutter_structure/data/network/requests/login_request.dart';
@@ -40,7 +39,6 @@ class GlobalCubit extends Cubit<GlobalState> {
   setProducts() {
     //Products List
     laptops = products.map((e) => ProductModel.fromJson(e)).toList();
-    emit(UpdateState());
   }
 
   updateProducts(String company) {
