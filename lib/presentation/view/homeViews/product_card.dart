@@ -7,13 +7,15 @@ import 'package:sizer/sizer.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductModel productModel;
-  const ProductCard(this.productModel,{super.key});
+
+  const ProductCard(this.productModel, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.detailsRoute);
+        Navigator.pushNamed(context, Routes.detailsRoute,
+            arguments: {'product': productModel});
       },
       child: SizedBox(
         width: 35.0.w,
@@ -104,7 +106,8 @@ class ProductCard extends StatelessWidget {
 
 class ProductImage extends StatelessWidget {
   final String? image;
-  const ProductImage(this.image,{super.key});
+
+  const ProductImage(this.image, {super.key});
 
   @override
   Widget build(BuildContext context) {
