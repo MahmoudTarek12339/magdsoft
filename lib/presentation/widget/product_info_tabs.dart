@@ -3,7 +3,8 @@ import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:sizer/sizer.dart';
 
 class ProductInfoTabs extends StatefulWidget {
-  const ProductInfoTabs({super.key});
+  final String description;
+  const ProductInfoTabs(this.description,{super.key});
 
   @override
   State<ProductInfoTabs> createState() => _ProductInfoTabsState();
@@ -27,7 +28,7 @@ class _ProductInfoTabsState extends State<ProductInfoTabs>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 40.0.h,
         child: Column(children: [
           TabBar(
@@ -50,7 +51,7 @@ class _ProductInfoTabsState extends State<ProductInfoTabs>
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. ',
+                      widget.description,
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
