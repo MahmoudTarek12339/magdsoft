@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magdsoft_flutter_structure/data/models/product_model.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/shared/detailsScreen/details_screen.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/shared/helpScreen/help_screen.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/shared/homeScreen/home_screen.dart';
@@ -27,7 +28,10 @@ class AppRouter {
       case Routes.homeRoute:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.detailsRoute:
-        return MaterialPageRoute(builder: (_) => const DetailsScreen());
+        Map<String, dynamic> arguments =
+            settings.arguments as Map<String, dynamic>;
+        ProductModel product = arguments['product'] as ProductModel;
+        return MaterialPageRoute(builder: (_) => DetailsScreen(product));
       case Routes.helpRoute:
         return MaterialPageRoute(builder: (_) => const HelpScreen());
       default:
